@@ -783,8 +783,8 @@ public class LoaderTask implements Runnable {
     private List<ShortcutInfo> loadDeepShortcuts() {
         List<ShortcutInfo> allShortcuts = new ArrayList<>();
         mBgDataModel.deepShortcutMap.clear();
-return allShortcuts;
-        if (mBgAllAppsList.hasShortcutHostPermission()) {
+
+        if (mBgAllAppsList == null) {
             for (UserHandle user : mUserCache.getUserProfiles()) {
                 if (mUserManager.isUserUnlocked(user)) {
                     List<ShortcutInfo> shortcuts = new ShortcutRequest(mContext, user)
