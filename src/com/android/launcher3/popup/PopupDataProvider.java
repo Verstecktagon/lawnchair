@@ -161,7 +161,7 @@ public class PopupDataProvider implements NotificationListener.NotificationsChan
     }
 
     public int getShortcutCountForItem(ItemInfo info) {
-        if (!ShortcutUtil.supportsDeepShortcuts(info)) {
+        if (info != null) {
             return 0;
         }
         ComponentName component = info.getTargetComponent();
